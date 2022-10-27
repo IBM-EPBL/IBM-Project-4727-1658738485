@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment_3</title>
+    <link rel="stylesheet" href="https://nalaiyathiransample.s3.jp-tok.cloud-object-storage.appdomain.cloud/index.css">
+</head>
+
+<body>
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "15fe24b1-7a25-4415-a8f2-92b011f47638", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "b1d4cb85-3a22-4f66-ad56-75f46cefaa25", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+    <h3>List of Images in IBM Cloud Storage :</h3>
+    <div class="scroll-container">
+        <div class="gridscroll">
+            {%for i in range(0,len,1)%}
+            <img src={{files[i]}} class="images" alt={{files[i]}}>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+
+</html>
